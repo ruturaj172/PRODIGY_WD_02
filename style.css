@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.stopwatch-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+.display-time {
+    font-size: 3em; /* Increased font size */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for consistent digit width */
+}
+
+.controls button {
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#startButton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+#startButton:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+#pauseButton {
+    background-color: #ffc107; /* Amber */
+    color: #333;
+}
+#pauseButton:hover:not(:disabled) {
+    background-color: #e0a800;
+}
+
+#resetButton {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+#resetButton:hover:not(:disabled) {
+    background-color: #d32f2f;
+}
+
+#lapButton {
+    background-color: #007bff; /* Blue */
+    color: white;
+}
+#lapButton:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.controls button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.laps-container {
+    margin-top: 20px;
+    text-align: left;
+    max-height: 200px; /* Max height for scrollability */
+    overflow-y: auto;   /* Add scroll if content overflows */
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.laps-container h2 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#lapsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lapsList li {
+    padding: 8px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1em;
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+}
+
+#lapsList li:last-child {
+    border-bottom: none;
+}
+
+#lapsList li .lap-number {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #007bff;
+}
